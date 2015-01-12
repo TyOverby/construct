@@ -1,7 +1,7 @@
 #![allow(unstable)]
 
 pub struct ReserveN<T> {
-    pub n: uint
+    pub n: usize
 }
 
 impl <T> Iterator for ReserveN<T> {
@@ -11,7 +11,7 @@ impl <T> Iterator for ReserveN<T> {
         None
     }
 
-    fn size_hint(&self) -> (uint, Option<uint>) {
+    fn size_hint(&self) -> (usize, Option<usize>) {
         (self.n, Some(self.n))
     }
 }
@@ -33,7 +33,7 @@ impl <T> Iterator for Single<T> {
         self.t.take()
     }
 
-    fn size_hint(&self) -> (uint, Option<uint>) {
+    fn size_hint(&self) -> (usize, Option<usize>) {
         let s = match self.t {
             Some(_) => 1,
             None => 0
