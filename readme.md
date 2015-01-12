@@ -5,7 +5,16 @@ contains a macro that lets you construct containers from any type that implement
 the `Construct` trait.  By default, all of the standard library containers are
 included.
 
-### Example
+## Install
+
+**Cargo.toml**
+
+```
+[dependencies]
+construct = "*"
+```
+
+## Example
 
 ```rust
 #[macro_use]
